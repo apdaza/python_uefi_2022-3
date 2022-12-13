@@ -11,9 +11,24 @@ while True:
 
 print(secreto)
 
+intentos = 0
+
 while True:
-    n = input("ingrese un número de 3 digitos: ")
-    numero = [int(c) for c in n]
+    no_validado = True
+    while no_validado:
+        n = input("ingrese un número de 3 digitos: ")
+        if len(n) != len(secreto):
+            print("Número no valido")
+            continue
+        lista = [int(c) for c in n]
+        numero = []
+        for i in lista:
+            if i not in numero:
+                numero.append(i)
+        if len(numero) == len(secreto):
+            break
+        print("Número no valido")
+
     picas = 0
     fijas = 0
 
@@ -25,9 +40,14 @@ while True:
                 else:
                     picas += 1
 
-    print("picas = ", picas, " fijas = ", fijas)
+    intentos += 1
+    print("picas = ", picas, " fijas = ", fijas, " intentos = ", intentos)
 
     if fijas == 3:
         print("Felicitaciones")
+        break
+
+    if intentos == len(secreto) * 2:
+        print("Completaste los intentos permitidos")
         break
 

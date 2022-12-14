@@ -2,11 +2,21 @@ from random import randint
 
 secreto = []
 
+opciones = [3,4,5]
+while True:
+    cant_digitos = int(input("Ingrese la cantidad de digitos (3, 4 o 5):"))
+    if cant_digitos in opciones:
+        break
+    else:
+        print("cantidad de digitos no valida")
+
 while True:
     n = randint(0, 9)
+    if n == 0 and len(secreto) == 0:
+        continue
     if n not in secreto:
         secreto.append(n)
-    if len(secreto) == 3:
+    if len(secreto) == cant_digitos:
         break
 
 print(secreto)
@@ -16,7 +26,7 @@ intentos = 0
 while True:
     no_validado = True
     while no_validado:
-        n = input("ingrese un número de 3 digitos: ")
+        n = input("ingrese un número de " + str(cant_digitos) + "  digitos: ")
         if len(n) != len(secreto):
             print("Número no valido")
             continue
@@ -43,7 +53,7 @@ while True:
     intentos += 1
     print("picas = ", picas, " fijas = ", fijas, " intentos = ", intentos)
 
-    if fijas == 3:
+    if fijas == cant_digitos:
         print("Felicitaciones")
         break
 

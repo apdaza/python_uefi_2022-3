@@ -1,6 +1,7 @@
 from libreria_pyf import *
 
-digitos = 5
+digitos = generar_cantidad()
+print("vamos a jugar con %d digitos" % digitos)
 intentos = 0
 secreto = generar_secreto(digitos)
 print(secreto)

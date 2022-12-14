@@ -1,4 +1,7 @@
-from random import randint
+from random import randint, choice
+
+def generar_cantidad():
+    return choice([3,4,5])
 
 def generar_secreto(digitos):
     secreto = []

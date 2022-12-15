@@ -29,10 +29,13 @@ class Boa(Animal):
 class Jirafa(Animal):
     pass
 
+class Mixto(Perro, Boa):
+    pass
+
 class TiendaMascotas:
     def __init__(self):
         self.animal = None
-        self.animales = [Gato(), Perro(), Cacatua(), Boa(), Jirafa()]
+        self.animales = [Gato(), Perro(), Cacatua(), Boa(), Jirafa(), Mixto()]
 
     def seleccionar_animal(self):
         self.animal = choice(self.animales)

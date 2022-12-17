@@ -16,8 +16,8 @@ class Juego:
         self.jugador1.mostrar_cartas(finalizado)
         print("Cartas jugador2")
         self.jugador2.mostrar_cartas(finalizado)
-
-        print("Jugador1: %d y Jugador2: %d" 
+        if finalizado:
+            print("Jugador1: %d y Jugador2: %d" 
               %(self.jugador1.valor_mazo(), self.jugador2.valor_mazo()))
 
     def valorar_juego(self):

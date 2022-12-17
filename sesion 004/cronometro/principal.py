@@ -1,4 +1,4 @@
-from cronometro import *
+from cronometro2 import *
 from time import sleep
 
 c = Cronometro()

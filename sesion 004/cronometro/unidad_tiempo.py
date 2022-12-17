@@ -22,3 +22,6 @@ class UnidadTiempo:
     def ver_valor(self):
         return "{:02d}".format(self.valor)
 
+    def setear(self, valor):
+        self.valor = valor
+

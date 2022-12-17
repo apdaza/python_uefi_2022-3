@@ -39,3 +39,9 @@ class Cronometro:
                                  self.minuto.ver_valor(),
                                  self.segundo.ver_valor(),
                                  self.decima.ver_valor())
+
+    def setear(self, valores):
+        self.hora.setear(valores[0])
+        self.minuto.setear(valores[1])
+        self.segundo.setear(valores[2])
+        self.decima.setear(valores[3])

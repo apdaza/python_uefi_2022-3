@@ -32,3 +32,10 @@ class Cronometro:
             tiempo += u.ver_valor() + " : "
 
         return tiempo[:-3]
+
+    def setear(self, valores):
+        elemento = -1
+        for u in self.unidades:
+            u.setear(valores[elemento])
+            elemento -= 1
+

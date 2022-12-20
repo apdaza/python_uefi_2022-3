@@ -21,9 +21,9 @@ class Cronometro:
 
     def retroceder(self):
         self.decima.retroceder()
-        if self.decima.valor == self.segundo.tope:
+        if self.decima.valor == self.decima.tope:
             self.segundo.retroceder()
-            if self.segundo.valor == self.minuto.tope:
+            if self.segundo.valor == self.segundo.tope:
                 self.minuto.retroceder()
                 if self.minuto.valor == self.minuto.tope:
                     self.hora.retroceder()

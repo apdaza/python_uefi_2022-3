@@ -3,6 +3,7 @@ from cronometro import Cronometro
 from threading import *
 from time import sleep
 
+
 class AppCronometro(Thread):
 
     def __init__(self):
@@ -10,6 +11,7 @@ class AppCronometro(Thread):
         self.crono = Cronometro()
         self.frame = Frame(self.principal)
         self.frame.pack()
+        self.estado = True
 
         self.valor = StringVar()
         self.display = Label(self.frame, textvariable=self.valor,
@@ -27,8 +29,12 @@ class AppCronometro(Thread):
         Thread.__init__(self)
         self.start()
 
+        #self.principal.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.principal.mainloop()
-
+        #print("forzado")
+        #raise SystemExit()
+        #self.join()
+        
 
     def cambiar_estado(self):
         self.crono.cambiar_estado()
@@ -37,10 +43,12 @@ class AppCronometro(Thread):
         self.crono.borrar()
 
     def run(self):
-        while True:
+        while self.estado:
             if not self.crono.parado:
                 self.crono.avanzar()
                 sleep(0.1)
+            if not self.estado:
+                break
             self.valor.set(self.crono.ver_tiempo())
 
     def callback(self):

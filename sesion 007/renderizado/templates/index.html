@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Hola render template</title>
+    </head>
+    <body>
+        <h1>Hola {{ usuario }}</h1>
+        Lenguajes de programación y opiniones dadas por sus usuarios:<br>
+        {% for l, d in data.items() %}
+            <b>{{ l }}</b> : {{ d }}<br>
+        {% endfor %}
+    </body>
+</html>

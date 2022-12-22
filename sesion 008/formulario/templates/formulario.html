@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario de captura</title>
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static',filename='estilos.css') }}">
+    </head>
+    <body>
+        <h1>Formulario de captura</h1>
+        <form action="/resultado" method="POST">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre"><br>
+            <label for="apellido">Apellido: </label>
+            <input type="text" name="apellido"><br>
+            <label for="telefono">Teléfono: </label>
+            <input type="tel" name="telefono"><br>
+            <label for="correo">Correo: </label>
+            <input type="email" name="correo"><br>
+            <label for="direccion">Dirección: </label>
+            <input type="text" name="direccion"><br>
+            <input type="submit" value="Enviar">
+        </form>
+
+    </body>
+</html>

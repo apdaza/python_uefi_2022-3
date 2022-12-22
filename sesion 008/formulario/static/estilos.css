@@ -1,0 +1,32 @@
+body {
+    background-color: azure;
+    color: darkslateblue;
+}
+
+table {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+tr {
+    margin: 2px;
+    padding: 2px;
+    border-bottom: 1px solid darkblue;
+}
+
+th {
+    background-color: darkslategray;
+    color: whitesmoke;
+}
+
+label {
+    width: 200px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 200px;
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

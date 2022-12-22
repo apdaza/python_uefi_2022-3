@@ -1,0 +1,30 @@
+body {
+  color : navy;
+  background-color : beige;
+}
+
+section {
+  background-color : #FFFFFF;
+  color : #000000;
+  border : 1px solid #0000FF;
+  margin : 10px;
+  border-radius : 5px;
+  padding : 10px;
+}
+
+aside {
+  float : right;
+}
+
+#especial {
+  color : #FFaa00;
+}
+
+#normal {
+  color : #555555;
+}
+
+#especial h2{
+  color : #00aa00;
+  text-shadow: 2px 2px grey;
+}

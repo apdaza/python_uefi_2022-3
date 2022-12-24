@@ -12,5 +12,17 @@
         <nav>
             <a href="/index">listar estudiantes</a> 
         </nav>
+        <form action="/editar_estudiante" method="post">
+            <input type="hidden" name="id" value="{{ datos.id }}">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" placeholder="Ingrese nombre" value="{{ datos.nombre }}"><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" placeholder="Ingrese apellido" value="{{ datos.apellido }}"><br>
+            <label for="codigo">Código:</label>
+            <input type="text" name="codigo" placeholder="Ingrese código" value="{{ datos.codigo }}"><br>
+            <label for="correo">Correo:</label>
+            <input type="email" name="correo" placeholder="Ingrese el correo" value="{{ datos.correo }}"><br>
+            <input type="submit" value="Editar estudiante">
+        </form>
     </body>
 </html>

@@ -52,6 +52,36 @@ def agregar_estudiante():
     else:
         return render_template('agregar_estudiante.html')
 
+@app.route("/editar_estudiante", methods=['POST', 'GET'])
+def editar_estudiante():
+    if request.method == 'GET':
+        id = request.args.get('id')
+        e = Estudiante.query.filter_by(id = id).first()
+        return render_template('editar_estudiante.html', datos = e)
+    else:
+        formulario = request.form
+        id = formulario['id']
+        e = Estudiante.query.filter_by(id = id).first()
+        e.nombre = formulario['nombre']
+        e.apellido = formulario['apellido']
+        e.correo = formulario['correo']
+        e.codigo = formulario['codigo']
+        db.session.commit()
+        return redirect(url_for('index'))
+
+@app.route("/eliminar_estudiante", methods=['POST', 'GET'])
+def eliminar_estudiante():
+    if request.method == 'GET':
+        id = request.args.get('id')
+        e = Estudiante.query.filter_by(id = id).first()
+        return render_template('eliminar_estudiante.html', datos = e)
+    else:
+        id = request.form['id']
+        e = Estudiante.query.filter_by(id = id).first()
+        db.session.delete(e)
+        db.session.commit()
+        return redirect(url_for('index'))
+
 # cargamos la aplicacion
 if __name__ == '__main__':
     with app.app_context():

@@ -10,7 +10,17 @@
         <h1>Estudiantes y notas</h1>
         <h2>Eliminar estudiante</h2>
         <nav>
-            <a href="/index">listar estudiantes</a> 
+            <a href="/">listar estudiantes</a> 
         </nav>
+        <section id="alerta">
+            <h3>Esta seguro que desea eleiminar al siguiente estudiante:</h3>
+            <b>Nombre: </b> {{ datos.nombre }} {{ datos.apellido }} <br>
+            <b>Código: </b> {{ datos.codigo }}
+
+        </section>
+        <form action="/eliminar_estudiante" method="post">
+            <input type="hidden" name="id" value="{{ datos.id }}">
+            <input type="submit" value="Aceptar">
+        </form>
     </body>
 </html>

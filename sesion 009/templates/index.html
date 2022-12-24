@@ -19,7 +19,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Correo</th>
-                <th>acciones</th>
+                <th colspan="2">acciones</th>
             </tr>
             {% for d in datos %}
             <tr>
@@ -27,7 +27,8 @@
                 <td>{{ d.nombre }}</td>
                 <td>{{ d.apellido }}</td>
                 <td>{{ d.correo }}</td>
-                <td>{{ d.id }}</td>
+                <td><a href="/editar_estudiante?id={{ d.id }}">editar</a></td>
+                <td><a href="/eliminar_estudiante?id={{ d.id }}">eliminar</a></td>
             </tr>
             {% endfor %}
         </table>

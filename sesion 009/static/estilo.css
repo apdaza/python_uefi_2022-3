@@ -6,3 +6,11 @@ table {
     background-color: #ffffff;
     border: 1px solid #394030;
 }
+
+#alerta {
+    border: 2px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    background-color: gold;
+}

@@ -26,6 +26,11 @@ class Estudiante(db.Model):
         self.codigo = datos['codigo']
         self.correo = datos['correo']
 
+class Nota(db.Model):
+    id = db.Column('nota_id', db.Integer, primary_key = True)
+    estudiante = db.Column(db.Integer)
+    valor = db.Column(db.Integer)
+
 # definimos las rutas de nuestra aplicacion
 @app.route("/")
 def index():
@@ -81,6 +86,15 @@ def eliminar_estudiante():
         db.session.delete(e)
         db.session.commit()
         return redirect(url_for('index'))
+
+@app.route("/ver_notas", methods=['GET'])
+def ver_notas():
+    if request.method == 'GET':
+        id = request.args.get('id')
+        e = Estudiante.query.filter_by(id = id).first()
+        n = Nota.query.filter_by(estudiante = id).all()
+
+        return render_template('ver_notas.html', estudiante = e, notas = n)
 
 # cargamos la aplicacion
 if __name__ == '__main__':

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Estudiantes y notas</title>
+        <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='estilo.css') }}">
+    </head>
+    <body>
+        <h1>Estudiantes y notas</h1>
+        <h2>Estudiantes</h2>
+        <nav>
+            <a href="/">listar estudiantes</a> 
+            <a href="/agregar_estudiante">Agregar estudiante</a>
+        </nav>
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>acciones</th>
+            </tr>
+            {% for d in datos %}
+            <tr>
+                <td>{{ d.codigo }}</td>
+                <td>{{ d.nombre }}</td>
+                <td>{{ d.apellido }}</td>
+                <td>{{ d.correo }}</td>
+                <td>{{ d.id }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
